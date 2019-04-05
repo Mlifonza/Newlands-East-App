@@ -1,0 +1,159 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Events
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="onSports()">
+          <ion-card-header>
+            <ion-card-subtitle>Sports</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onSports()">
+              <ion-icon name="football"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="onMusic()">
+          <ion-card-header>
+            <ion-card-subtitle>Music</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onMusic()">
+              <ion-icon name="musical-notes"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="onFestivals()">
+          <ion-card-header>
+            <ion-card-subtitle>Festivals</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onFestivals()">
+              <ion-icon name="people"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="4">
+        <ion-card (click)="onChurch()">
+          <ion-card-header>
+            <ion-card-subtitle>Church</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onChurch()">
+              <ion-icon name="female"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card (click)="onEducare()">
+          <ion-card-header>
+            <ion-card-subtitle>Educare</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onEducare()">
+              <ion-icon name="school"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card (click)="onNews()">
+          <ion-card-header>
+            <ion-card-subtitle>News</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onNews()">
+              <ion-icon name="paper"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="4">
+        <ion-card (click)="onBus()">
+          <ion-card-header>
+            <ion-card-subtitle>Bus</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onBus()">
+              <ion-icon name="bus"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card (click)="onFood()">
+          <ion-card-header>
+            <ion-card-subtitle>Food</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onFood()">
+              <ion-icon name="pizza"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card (click)="onWeather()">
+          <ion-card-header>
+            <ion-card-subtitle>Weather</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onWeather()">
+              <ion-icon name="rainy"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="4">
+        <ion-card (click)="onJobs()">
+          <ion-card-header>
+            <ion-card-subtitle>Jobs</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onJobs()">
+              <ion-icon name="business"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card (click)="onTradition()">
+          <ion-card-header>
+            <ion-card-subtitle>Tradition</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="onTradition()">
+              <ion-icon name="walk"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
