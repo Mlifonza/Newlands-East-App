@@ -18,4 +18,40 @@ export class HomePage {
     this.router.navigateByUrl('/festivals')
   }
 
+  onMusic(){
+    this.router.navigateByUrl('/music')
+  }
+
+  onChurch(){
+    this.router.navigateByUrl('/church')
+  }
+
+  onEducare(){
+    this.router.navigateByUrl('/educare')
+  }
+
+  onNews(){
+    this.router.navigateByUrl('/news')
+  }
+
+  onTransport(){
+    this.router.navigateByUrl('/transport')
+  }
+
+  onFood(){
+    this.router.navigateByUrl('/food')
+  }
+
+  onWeather(){
+    this.router.navigateByUrl('/weather')
+  }
+
+  onJobs(){
+    this.router.navigateByUrl('/jobs')
+  }
+
+  onTradition(){
+    this.router.navigateByUrl('/tradition')
+  }
+
 }
