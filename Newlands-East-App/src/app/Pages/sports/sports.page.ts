@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { sports } from '../../models/interfaces';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -11,7 +12,10 @@ export class SportsPage implements OnInit {
   
   sport: sports[];
   
-  constructor(private location: Location) { }
+  constructor(
+    private location: Location,
+    private router: Router
+    ) { }
   
   ngOnInit() {
     this.sport = [
@@ -22,8 +26,8 @@ export class SportsPage implements OnInit {
     ]
   }
   
-  function(){
-    this.location.back();
+  addSport(){
+    this.router.navigateByUrl('/add-sport')
   }
   
 }

@@ -5,11 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-picker 
+  <button ion-button (click)="openPicker()">Open Picker</button>
+  <ion-input placeholder="Location"></ion-input>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button (click)="save()">
+    <ion-icon name="checkmark"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="cancel()">
+    <ion-icon name="close"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
