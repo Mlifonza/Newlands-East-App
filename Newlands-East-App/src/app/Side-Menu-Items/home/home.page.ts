@@ -54,4 +54,8 @@ export class HomePage {
     this.router.navigateByUrl('/tradition')
   }
 
+  onHealth(){
+    this.router.navigateByUrl('/health')
+  }
+
 }

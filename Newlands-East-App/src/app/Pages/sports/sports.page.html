@@ -8,13 +8,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-   <ion-card-header>
-     <ion-card-title>Football</ion-card-title>
-     <ion-card-subtitle>Newlands United FC</ion-card-subtitle>
-   </ion-card-header>
-   <ion-card-content>
-    <p>Newlands United FC will be playing a crutial match with TP Mazembe</p>
-   </ion-card-content>
+  <ion-card *ngFor="let data of sport">
+    <ion-card-header>
+      <ion-card-title>{{data.type}}</ion-card-title>
+      <ion-card-subtitle>{{data.location}}, {{data.time}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{data.description}}</p>
+    </ion-card-content>
   </ion-card>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="function()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

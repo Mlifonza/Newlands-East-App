@@ -25,7 +25,9 @@ const routes: Routes = [
   { path: 'weather', loadChildren: './Pages/weather/weather.module#WeatherPageModule' },
   { path: 'jobs', loadChildren: './Pages/jobs/jobs.module#JobsPageModule' },
   { path: 'tradition', loadChildren: './Pages/tradition/tradition.module#TraditionPageModule' },
-  { path: 'festivals', loadChildren: './Pages/festivals/festivals.module#FestivalsPageModule' }
+  { path: 'festivals', loadChildren: './Pages/festivals/festivals.module#FestivalsPageModule' },  { path: 'add-sport', loadChildren: './Pages/add-sport/add-sport.module#AddSportPageModule' },
+  { path: 'health', loadChildren: './Pages/health/health.module#HealthPageModule' }
+
 ];
 
 @NgModule({
