@@ -1,7 +1,8 @@
 {
   "name": "Newlands-East-App",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

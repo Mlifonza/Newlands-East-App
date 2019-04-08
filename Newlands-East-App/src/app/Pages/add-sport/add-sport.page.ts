@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { PickerController, ToastController } from '@ionic/angular';
 import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-add-sport',
@@ -40,12 +41,13 @@ export class AddSportPage implements OnInit {
       defaultItems: [
         { index: 0, value: this.typesOfSports[1] }
       ]
-    }).then(result => {
+    }).then(async result => {
       let msg = 'Selected ${result[0]}';
-      let toast = this.toastCtrl.create({
+      let toast = await this.toastCtrl.create({
         message: msg,
         duration: 4000
-      })
+      });
+      toast.present();
     });
   }
 
