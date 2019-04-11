@@ -4,18 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <button ion-button (click)="openPicker()">Open Picker</button>
-  <ion-input placeholder="Location"></ion-input>
+<ion-content padding>
+  <!-- <button ion-button (click)="openPicker()">Open Picker</button> -->
+  <form [formGroup]="sportEventDetailsForm">
+    <ion-input type="text" FormControlName="type" placeholder="type e.g Football, Rugby etc."></ion-input>
+    <ion-input type="text" FormControlName="location" placeholder="Location"></ion-input>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="cancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
 </ion-content>
 
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-  <ion-fab-button (click)="save()">
-    <ion-icon name="checkmark"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button (click)="cancel()">
-    <ion-icon name="close"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+

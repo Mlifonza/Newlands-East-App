@@ -1,0 +1,24 @@
+<ion-card-header>
+  <ion-card-title>{{feeds.type}}</ion-card-title>
+  <ion-card-subtitle>{{feeds.location}}, <b>{{feeds.time}}</b></ion-card-subtitle>
+</ion-card-header>
+<ion-card-content>
+  <p>{{feeds.description}}</p>
+  <ion-slides pager="false" [options]="images">
+    <ion-slide *ngFor="let item of images">
+      <ion-img [src]="item.image"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  <ion-button>
+    <ion-icon name="thumbs-up"></ion-icon>
+  </ion-button>
+  <ion-button>
+    <ion-icon name="thumbs-down"></ion-icon>
+  </ion-button>
+  <ion-button>
+    <ion-icon name="share-alt"></ion-icon>
+  </ion-button>
+  <ion-button>
+    <ion-icon name="download"></ion-icon>
+  </ion-button>
+</ion-card-content>

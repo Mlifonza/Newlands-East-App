@@ -9,26 +9,7 @@
 
 <ion-content>
   <ion-card *ngFor="let data of sport">
-    <ion-card-header>
-      <ion-card-title>{{data.type}}</ion-card-title>
-      <ion-card-subtitle>{{data.location}}, <b>{{data.time}}</b></ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{data.description}}</p>
-      <ion-img [src]="data.image"></ion-img>
-      <ion-button>
-        <ion-icon name="thumbs-up"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="thumbs-down"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="share-alt"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon name="download"></ion-icon>
-      </ion-button>
-    </ion-card-content>
+    <app-display-event-feeds [feeds]="data" [images]="images"></app-display-event-feeds>
   </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addSport()">

@@ -8,5 +8,12 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card *ngFor="let data of church">
+    <app-church [feeds]="data" [images]="images"></app-church>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addChurch()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
