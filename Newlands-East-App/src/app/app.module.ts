@@ -11,17 +11,6 @@ import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DisplayEventModule } from './display-event/display-event.module';
-import { DisplayEventFeedsPage } from './Pages/display-event-feeds/display-event-feeds.page';
-import { DisplayEventFeedsPageModule } from './Pages/display-event-feeds/display-event-feeds.module'
-import { CommonModule } from '@angular/common';
-
-import { SportsPage } from './Pages/sports/sports.page';
-import { ChurchPage } from './Pages/church/church.page';
-
-import { SportsPageModule } from './Pages/sports/sports.module';
-import { ChurchPageModule } from './Pages/church/church.module';
-import { EducarePageModule } from './Pages/educare/educare.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,11 +20,6 @@ import { EducarePageModule } from './Pages/educare/educare.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
-    DisplayEventModule,
-    CommonModule,
-    SportsPageModule,
-    ChurchPageModule,
-    EducarePageModule
   ],
   providers: [
     StatusBar,
