@@ -3,7 +3,6 @@ import { Location } from '@angular/common';
 import { PickerController, ToastController } from '@ionic/angular';
 import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-add-sport',

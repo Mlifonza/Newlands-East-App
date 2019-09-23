@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-card *ngFor="let data of news">
-    <app-display-event-feed [feeds]="data" [images]="images"></app-display-event-feed>
+    <app-display-event-feeds [feeds]="data" [images]="images"></app-display-event-feeds>
   </ion-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addNews()">

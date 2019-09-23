@@ -6,14 +6,16 @@
   <p>{{feeds.description}}</p>
   <ion-slides pager="false" [options]="images">
     <ion-slide *ngFor="let item of images">
-      <ion-img [src]="item.image"></ion-img>
+      <ion-img id="image" [src]="item.image"></ion-img>
     </ion-slide>
   </ion-slides>
   <ion-button>
     <ion-icon name="thumbs-up"></ion-icon>
+    <ion-label id="label">1k</ion-label>
   </ion-button>
   <ion-button>
     <ion-icon name="thumbs-down"></ion-icon>
+    <ion-label id="label">26</ion-label>
   </ion-button>
   <ion-button>
     <ion-icon name="share-alt"></ion-icon>

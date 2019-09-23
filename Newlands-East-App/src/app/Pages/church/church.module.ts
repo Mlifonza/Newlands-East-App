@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ChurchPage } from './church.page';
-import { SharedModule } from 'src/app/shared.module';
+import { DisplayEventFeedsModule } from '../../shared-modules/display-event-feeds.module';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    SharedModule
+    DisplayEventFeedsModule
   ],
   declarations: [ChurchPage]
 })

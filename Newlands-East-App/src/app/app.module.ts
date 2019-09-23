@@ -11,6 +11,12 @@ import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +26,14 @@ import { AppRoutingModule } from './app-routing.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
+
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSidenavModule
+
   ],
   providers: [
     StatusBar,

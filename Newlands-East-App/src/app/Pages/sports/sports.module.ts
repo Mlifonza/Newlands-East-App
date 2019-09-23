@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { SportsPage } from './sports.page';
 
-import { SharedModule } from '../../shared.module';
+import { DisplayEventFeedsModule } from '../../shared-modules/display-event-feeds.module';
 
 const routes: Routes = [
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    SharedModule
+    DisplayEventFeedsModule
   ],
   declarations: [SportsPage]
 })
