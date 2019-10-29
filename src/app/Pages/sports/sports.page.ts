@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Event, Images } from '../../models/interfaces';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { AddEventComponent } from '../../components/add-event/add-event.component'
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sports',
@@ -15,7 +17,8 @@ export class SportsPage implements OnInit {
   
   constructor(
     private location: Location,
-    private router: Router
+    private router: Router,
+    private popCntrl: PopoverController
     ) { }
   
   ngOnInit() {
@@ -35,7 +38,7 @@ export class SportsPage implements OnInit {
     ]
   }
   
-  addSport(){
+  addSport = async () => {
     this.router.navigateByUrl('/add-sport')
   }
   

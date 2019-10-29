@@ -17,6 +17,11 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,15 +37,20 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatCheckboxModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSidenavModule
+    MatSidenavModule,
 
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
     VideoPlayer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    WheelSelector
+    WheelSelector,
+    Camera,
+    File,
+    FilePath,
+    WebView
   ],
   bootstrap: [AppComponent]
 })

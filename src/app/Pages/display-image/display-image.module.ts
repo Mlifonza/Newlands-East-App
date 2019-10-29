@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AddSportPage } from './add-sport.page';
-import { AddEventModule } from 'src/app/shared-modules/add-event.module';
+import { DisplayImagePage } from './display-image.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AddSportPage
+    component: DisplayImagePage
   }
 ];
 
@@ -21,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(routes),
-    AddEventModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [AddSportPage]
+  declarations: [DisplayImagePage]
 })
-export class AddSportPageModule {}
+export class DisplayImagePageModule {}

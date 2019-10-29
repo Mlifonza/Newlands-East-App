@@ -74,4 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  #event-input {
+    
+  }
+
+  ion-textarea {
+    --background: rgb(189, 182, 179);
+    height: auto;
+    border-radius: 5px;
+  }
 }

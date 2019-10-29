@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: 'tradition', loadChildren: './Pages/tradition/tradition.module#TraditionPageModule' },
   { path: 'festivals', loadChildren: './Pages/festivals/festivals.module#FestivalsPageModule' },
   { path: 'add-sport', loadChildren: './Pages/add-sport/add-sport.module#AddSportPageModule' },
-  { path: 'health', loadChildren: './Pages/health/health.module#HealthPageModule' }
+  { path: 'health', loadChildren: './Pages/health/health.module#HealthPageModule' },  { path: 'display-image', loadChildren: './Pages/display-image/display-image.module#DisplayImagePageModule' }
+
 ];
 
 @NgModule({
