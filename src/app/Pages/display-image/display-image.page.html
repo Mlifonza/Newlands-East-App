@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>display-image</ion-title>
+    <ion-button slot=start>
+      <ion-back-button></ion-back-button>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="image">
+    <ion-img [src]="imagePath"></ion-img>
+  </div>
 </ion-content>

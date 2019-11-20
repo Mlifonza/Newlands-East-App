@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
   selector: 'app-display-image',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayImagePage implements OnInit {
 
-  constructor() { }
+  imagePath;
+  constructor(private localstorageservice: LocalstorageService) { }
 
   ngOnInit() {
+    this.imagePath = this.localstorageservice.getImagePath();
   }
 
 }

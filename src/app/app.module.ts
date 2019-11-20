@@ -20,8 +20,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx'
 
 @NgModule({
   declarations: [AppComponent],
@@ -49,8 +51,10 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     WheelSelector,
     Camera,
     File,
+    FileChooser,
     FilePath,
-    WebView
+    WebView,
+    StreamingMedia
   ],
   bootstrap: [AppComponent]
 })

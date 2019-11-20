@@ -9,13 +9,16 @@
         <div class="input">
           <ion-textarea id="event-input" type="text" name="eventType" (click)="onEventTypeClick()">
             <ion-thumbnail slot=start *ngFor="let i of images">
-              <ion-img id="img" [src]="i.path"></ion-img>
+              <ion-img id="img" [src]="i.path" (click)="openPic(i.path)"></ion-img>
             </ion-thumbnail>
           </ion-textarea>
         </div>
       </ion-col>
       <ion-col size=12>
-        <ion-icon name="camera" (click)="selectImage()"></ion-icon>
+        <ion-icon id="icon" name="camera" (click)="selectImage()"></ion-icon>
+      </ion-col>
+      <ion-col size=12>
+        <div class="location">Location</div>
       </ion-col>
     </ion-row>
   </div>

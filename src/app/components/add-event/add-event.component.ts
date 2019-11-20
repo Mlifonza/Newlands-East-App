@@ -1,11 +1,16 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Camera, CameraOptions, PictureSourceType } from '@ionic-native/camera/ngx';
-import { File } from '@ionic-native/file/ngx';
+import { File, FileEntry } from '@ionic-native/file/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { ActionSheetController, ToastController, LoadingController, Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { finalize } from 'rxjs/operators';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
+import { Router } from '@angular/router';
+import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { VideoPlayer, VideoOptions } from '@ionic-native/video-player/ngx';
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 
 const STORAGE_KEY = 'my_images';
 
@@ -27,7 +32,12 @@ export class AddEventComponent implements OnInit {
     private ref: ChangeDetectorRef,
     private storage: Storage,
     private loadingCntrl: LoadingController,
-    private plt: Platform) { }
+    private plt: Platform,
+    private localstorageservice: LocalstorageService,
+    private router: Router,
+    private fileChooser: FileChooser,
+    private videoPlayer: VideoPlayer,
+    private streamingMedia: StreamingMedia) { }
     
     ngOnInit() {
       this.plt.ready().then(() => {
@@ -58,12 +68,12 @@ export class AddEventComponent implements OnInit {
         return converted;
       }
     }
-
+    
     async presentToast(text) {
       const toast = await this.toastCntrl.create({
-          message: text,
-          position: 'bottom',
-          duration: 3000
+        message: text,
+        position: 'bottom',
+        duration: 3000
       });
       toast.present();
     }
@@ -99,6 +109,12 @@ export class AddEventComponent implements OnInit {
             }
           },
           {
+            text: 'Open Files',
+            handler: () => {
+              this.openFiles()
+            }
+          },
+          {
             text: 'Cancel',
             role: 'cancel'
           }
@@ -106,6 +122,23 @@ export class AddEventComponent implements OnInit {
       })
       
       await action.present();
+    }
+    
+    openFiles = () => {
+      let options: StreamingVideoOptions = {
+        controls: true,
+        shouldAutoClose: true,
+        orientation: 'portrait'
+      }
+      this.fileChooser.open()
+      .then( uri => {
+        this.filePath.resolveNativePath(uri)
+        .then(filePath => {
+          console.log(filePath)
+          this.streamingMedia.playVideo(filePath, options);
+        })
+      })
+      .catch(e => console.log(e));
     }
     
     takePictures = async (sourceType: PictureSourceType) => {
@@ -171,6 +204,31 @@ export class AddEventComponent implements OnInit {
         console.log('newEntry', this.images)
         this.ref.detectChanges(); // trigger change detection cycle
       });
+    }
+    
+    openPic = (imagePath) => {
+      this.localstorageservice.setImagePath(imagePath);
+      this.router.navigateByUrl('/display-image')
+    }
+    
+    startUpload = (imgEntry) => {
+      this.file.resolveLocalFilesystemUrl(imgEntry.filePath)
+      .then(entry => {
+        (<FileEntry> entry).file(file => this.readFile(file))
+      })
+      .catch(err => { this.presentToast('Could not read file') })
+    }
+    
+    readFile = (file: any) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const formData = new FormData();
+        const imgBlob = new Blob([reader.result], {
+          type : file.type
+        });
+        formData.append('file', imgBlob, file.name);
+        // this.uploadImageData(formData);
+      }
     }
     
   }
